@@ -33,7 +33,7 @@
     html += "<script type='text/javascript' src='" + codeBase + "/rma/KAgent.config.js'></script>\n";
     html += "<script type='text/javascript' src='" + codeBase + "/rma/KAgent.js'></script>\n";
     html += "<script>\n";
-    html += "var collections = " + getCollections() + "\n";
+    html += "var contextCollections = " + getCollections() + "\n";
     html += "window.onload = function(){DefaultCodebase = '" + codeBase + "' + '/rma/';ExecuteCmd('" + lExecuteParams + "');}\n";
     html += "function onKAgentDisconnected(){window.close();}\n";
     html += "function onKAgentConnect(){document.getElementById('popupContent').innerHTML = '<h3>The Visio+ Viewer is launched.<br /><br />Please do not close this window until you finished imaging reading</h3>';}\n";

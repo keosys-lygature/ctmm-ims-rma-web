@@ -29,6 +29,26 @@
     return seriesUIDTab.join(";");
   }
 
+  function collectExamsCollection() {
+    var examsMap = new Object();
+    $('[id^="MAINbody:basketForm:dataBasketDataTable:"][class^="iceDatTblRow"]').each(function() {
+      var seriesUID = getSeriesIdFromDom($(this).closest('tr'));
+      var studyUID = getStudyIdFromDom($(this).closest('tr'));
+      if (!examsMap[studyUID]) {
+        examsMap[studyUID] = new Object();
+        examsMap[studyUID].series = new Array();
+      }
+      examsMap[studyUID].series.push(seriesUID);
+    });
+    var examsCollection = new Array();
+    for (var study in examsMap) {
+      if (examsMap.hasOwnProperty(study)) {
+        examsCollection.push(examsMap[study]);
+      }
+    }
+    return JSON.stringify(exams);
+  }
+
   function getCollections() {
     return "";
   }

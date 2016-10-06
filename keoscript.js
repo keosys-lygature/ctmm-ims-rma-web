@@ -14,6 +14,13 @@
       return "";
   }
 
+  function getStudyIdFromDom(trElt) {
+    if (trElt)
+      return trElt.find('td:eq(2)').find('div').html();
+    else
+      return "";
+  }
+
   function collectSeriesUID() {
     var seriesUIDTab = new Array();
     $('[id^="MAINbody:basketForm:dataBasketDataTable:"][class^="iceDatTblRow"]').each(function() {

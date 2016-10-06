@@ -50,7 +50,7 @@
   }
 
   function getCollections() {
-    return "";
+    return "ctmm";
   }
 
   function openSeriesInViewer(seriesUID) {

@@ -7,10 +7,17 @@
     codeBase = codeBase.substring(0, codeBase.lastIndexOf("/"));
   };
 
+  function getSeriesIdFromDom(trElt) {
+    if (trElt)
+      return trElt.find('td:eq(5)').find('div').html();
+    else
+      return "";
+  }
+
   function collectSeriesUID() {
     var seriesUIDTab = new Array();
     $('[id^="MAINbody:basketForm:dataBasketDataTable:"][class^="iceDatTblRow"]').each(function() {
-      seriesUIDTab.push($(this).closest('tr').find('td:eq(5)').find('div').html());
+      seriesUIDTab.push(getSeriesIdFromDom($(this).closest('tr')));
     });
     return seriesUIDTab.join(";");
   }

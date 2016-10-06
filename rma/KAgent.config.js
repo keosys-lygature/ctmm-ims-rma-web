@@ -35,4 +35,11 @@ var RmaConfig = {
     }
   },
   "CODEBASE": window.location.protocol + "//" + window.location.host + DefaultCodebase,
+
+  "contextOverloader": function(){
+    var context = new Object();
+    context['exams'] = contextExams;
+    context['collections'] = contextCollections;
+    return context;
+  }
 }

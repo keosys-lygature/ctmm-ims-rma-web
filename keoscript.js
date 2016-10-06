@@ -46,7 +46,7 @@
         examsCollection.push(examsMap[study]);
       }
     }
-    return JSON.stringify(exams);
+    return JSON.stringify(examsCollection);
   }
 
   function getCollections() {
